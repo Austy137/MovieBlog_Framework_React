@@ -1,19 +1,16 @@
-import Header from '../components/Header'
-import { Container, Row, Col, Card, ListGroup, ListGroupItem } from 'react-bootstrap'
-const Landing = () => {
-    return (
-        <div >
-            <Header />
-            <>
-                <Container fluid>
-                    <Row>
-                        <Col>1 of 2</Col>
-                        <Col>2 of 2</Col>
-                    </Row>
-                </Container>
-            </>
-        </div>
-    )
-}
+import Header from "../components/Header";
+import { Container, Row, Col } from "react-bootstrap";
 
-export default Landing
+const Landing = () => {
+	return (
+		<Container>
+			<Row md={4}>
+				<Col>1 of 3</Col>
+				<Col xs={6}>2 of 3</Col>
+				<Col>3 of 3</Col>
+			</Row>
+		</Container>
+	);
+};
+
+export default Landing;
