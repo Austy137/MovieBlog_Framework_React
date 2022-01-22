@@ -3,7 +3,7 @@ import Landing from './screen/Landing'
 const App = () => {
   return (
     <Landing/>
-    
+   
 
   )
 }
