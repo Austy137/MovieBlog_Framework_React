@@ -1,83 +1,81 @@
 import Header from "../components/Header";
-import { Container, Row, Col } from "react-bootstrap";
+import { movie_data } from "../data";
+import {
+	Container,
+	Row,
+	Col,
+	Card,
+	ListGroup,
+	ListGroupItem,
+	Nav,
+	Navbar,
+	NavDropdown,
+	Form,
+	FormControl,
+	Button,
+} from "react-bootstrap";
 
-const movie_data = [
-    {
-        "id": 1,
-        "name": "Avenger1",
-        "director": "Austin1",
-        "casts": "Winson1, Winson2, Winson3",
-        "description": "this movie is good",
-        "duration": "2 hour",
-        "aired_at": new Date(),
-        "no_of_review": 123,
-        "avg_rating": 7.5
-
-    },
-    {
-        "id": 2,
-        "name": "Avenger2",
-        "director": "Austin2",
-        "casts": "Winson1, Winson2, Winson3",
-        "description": "this movie is good",
-        "duration": "2 hour",
-        "aired_at": new Date(),
-        "no_of_review": 123,
-        "avg_rating": 7.5
-
-    },
-    
-    {
-        "id": 3,
-        "name": "Avenger2",
-        "director": "Austin",
-        "casts": "Winson1, Winson2, Winson3",
-        "description": "this movie is good",
-        "duration": "2 hour",
-        "aired_at": new Date(),
-        "no_of_review": 123,
-        "avg_rating": 7.5
-
-    },
-    {
-        "id": 4,
-        "name": "Avenger2",
-        "director": "Austin",
-        "casts": "Winson1, Winson2, Winson3",
-        "description": "this movie is good",
-        "duration": "2 hour",
-        "aired_at": new Date(),
-        "no_of_review": 123,
-        "avg_rating": 7.5
-
-    },
-    {
-        "id": 5,
-        "name": "Avenger2",
-        "director": "Austin",
-        "casts": "Winson1, Winson2, Winson3",
-        "description": "this movie is good",
-        "duration": "2 hour",
-        "aired_at": new Date(),
-        "no_of_review": 123,
-        "avg_rating": 7.5
-
-    }
-]
 
 
 const Landing = () => {
+
+    const movie_size = 3;
+
 	return (
-		<Container>
-			<Row>
-				<Header />
-			</Row>
-			<Row md={4}>
-				<Col>1 of 3</Col>
-				<Col xs={6}>2 of 3</Col>
-				<Col>3 of 3</Col>
-			</Row>
-		</Container>
+		<container>
+			<Navbar bg="light" expand="lg">
+				<Container fluid>
+					<Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+					<Navbar.Toggle aria-controls="navbarScroll" />
+					<Navbar.Collapse id="navbarScroll">
+						<Nav
+							className="me-auto my-2 my-lg-0"
+							style={{ maxHeight: "100px" }}
+							navbarScroll
+						>
+							<Nav.Link href="#action1">Home</Nav.Link>
+							<Nav.Link href="#action2">Link</Nav.Link>
+							<NavDropdown title="Link" id="navbarScrollingDropdown">
+								<NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+								<NavDropdown.Item href="#action4">
+									Another action
+								</NavDropdown.Item>
+								<NavDropdown.Divider />
+								<NavDropdown.Item href="#action5">
+									Something else here
+								</NavDropdown.Item>
+							</NavDropdown>
+							<Nav.Link href="#" disabled>
+								Link
+							</Nav.Link>
+						</Nav>
+						<Form className="d-flex">
+							<FormControl
+								type="search"
+								placeholder="Search"
+								className="me-2"
+								aria-label="Search"
+							/>
+							<Button variant="outline-success">Search</Button>
+						</Form>
+					</Navbar.Collapse>
+				</Container>
+			</Navbar>
+			<Header />
+			<Container>
+				<Row>
+                    {
+                        movie_data.slice(0,movie_size).map(({id, name, director})=>(
+                            <Col>
+                            movie id = {id} <br/>
+                            movie name = {name} <br/>
+                            director = {director}
+                            </Col>
+                        ))
+                    }
+				</Row>
+			</Container>
+		</container>
 	);
 };
 
