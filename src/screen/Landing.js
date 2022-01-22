@@ -2,8 +2,7 @@ import Header from '../components/Header'
 import { Container, Row, Col, Card, ListGroup, ListGroupItem, Nav, Navbar, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
 const Landing = () => {
     return (
-        <div >
-            <Header />
+        <container >
             <Navbar bg="light" expand="lg">
                 <Container fluid>
                     <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
@@ -40,8 +39,15 @@ const Landing = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-        </div>
+            <Header />
+            <Container><Row>
+                <Col>Column 1</Col>
+                <Col>Column 2</Col>
+                <Col>Column 3</Col>
+            </Row>
+            </Container>
+        </container>
     )
 }
 
-export default Landing
+export default Landing;
